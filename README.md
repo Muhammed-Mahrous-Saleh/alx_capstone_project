@@ -22,11 +22,10 @@ The Personal Portfolio Website is a digital representation of my journey in the 
 
 ## Technologies Used:
 
-- **Frontend:** HTML5, CSS3 (with SASS), and JavaScript (with ES6+ features).
+- **Frontend:** HTML5, CSS3, and JavaScript.
 - **Frameworks:** Bootstrap for responsive design and basic UI components.
-- **Backend:** Python with Flask for serving the website and handling contact form submissions.
-- **Database:** SQLite for storing blog posts and contact messages.
-- **Tools:** Git for version control, Netlify for continuous deployment.
+- **Backend:** Python with Flask for serving the website.
+- **Tools:** Git for version control.
 
 ## Screenshots or Demo:
 
@@ -48,13 +47,13 @@ The Personal Portfolio Website is a digital representation of my journey in the 
 
 ## Contact Information:
 
-- **Name:** John Doe
-- **Email:** johndoe@example.com
-- **Portfolio:** [www.example-portfolio.com](http://www.example-portfolio.com)
-- **LinkedIn:** [John's LinkedIn](http://www.linkedin.com/in/johndoe)
-- **GitHub:** [John's GitHub](http://www.github.com/johndoe)
+- **Name:** Muhammed Saleh
+- **Email:** mo.alaa97@gmail.com
+<!-- - **Portfolio:** [www.example-portfolio.com](http://www.example-portfolio.com) -->
+- **LinkedIn:** [Muhammad Saleh's LinkedIn](https://www.linkedin.com/in/muhammad-a-mahrous/)
+- **GitHub:** [Muhammed Saleh's GitHub](https://github.com/Muhammed-Mahrous-Saleh)
 
+## Project Workflow Flowchart
+![workflow flowchart]()
 
-## ALX Project Objective:
-
-The objective of the capstone project is to create a web development portfolio that demonstrates your skills, projects, and accomplishments. This portfolio will serve as a showcase of your abilities and will be a valuable asset in your web development journey. By completing the capstone project, you will have a comprehensive portfolio that reflects your progress, expertise, and readiness to take on more challenging web development projects.
+## Prototype
