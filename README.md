@@ -1,6 +1,7 @@
 
 # Task Manager Application:
-![Main Page](https://github.com/Muhammed-Mahrous-Saleh/alx_capstone_project/blob/main/workflow%20flowchart.png)
+![Main Page]([https://github.com/Muhammed-Mahrous-Saleh/alx_capstone_project/blob/main/workflow%20flowchart.png](https://github.com/Muhammed-Mahrous-Saleh/alx_capstone_project/blob/main/main%20screen.png))
+![Task Page]([https://github.com/Muhammed-Mahrous-Saleh/alx_capstone_project/blob/main/workflow%20flowchart.png](https://github.com/Muhammed-Mahrous-Saleh/alx_capstone_project/blob/main/task%20screen.png))
 ## Project Overview:
 
 **Description:** 
