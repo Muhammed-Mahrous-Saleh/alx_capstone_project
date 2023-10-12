@@ -127,9 +127,36 @@ footer {
     color: #FFF;
     text-align: center;
     font-family: Outfit;
-    font-size: 40px;
+    font-size: 24px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    text-transform: capitalize;
+}
+
+.task_card .task_desc {
+    text-align: center;
+    font-size: 18px;
+    color: #9385d7;
+}
+
+.task_card p {
+    color: #fff;
+    font-size: 15px;
+}
+
+.btn_container {
+    display: flex;
+    justify-content: end;
+    gap: 10px;
+}
+
+.btn_container a {
+    text-decoration: none;
+    padding: 10px 15px;
+    background-color: #6363b0;
+    color: #000;
+    border-radius: 10px;
+    font-size: 16px;
     text-transform: capitalize;
 }
