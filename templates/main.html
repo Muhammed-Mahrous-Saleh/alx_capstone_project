@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                Taskey
+            </div>
+            <!-- filtering, sorting, and searching tasks -->
+            <form method="get" action="/">
+                <label for="filter">Filter:</label>
+                <select id="filter" name="filter">
+                    <option value="all" {{ 'selected' if filter_option=='all' }}>All</option>
+                    <option value="Not Started" {{ 'selected' if filter_option=='Not Started' }}>Not Started</option>
+                    <option value="In Progress" {{ 'selected' if filter_option=='In Progress' }}>In Progress</option>
+                    <option value="Completed" {{ 'selected' if filter_option=='Completed' }}>Completed</option>
+                </select>
+
+                <label for="sort">Sort:</label>
+                <select id="sort" name="sort">
+                    <option value="DueDate" {{ 'selected' if sort_option=='DueDate' }}>Due Date</option>
+                    <option value="Priority" {{ 'selected' if sort_option=='Priority' }}>Priority</option>
+                    <option value="Title" {{ 'selected' if sort_option=='Title' }}>Title</option>
+                </select>
+
+                <label for="search">Search:</label>
+                <input type="text" id="search" name="search" placeholder="Search tasks..." value="{{ search_term }}">
+
+                <input type="submit" value="Apply" id="apply_filter">
+            </form>
+        </nav>
+    </header>
+    <main>
+
+
+        <!-- Display tasks -->
+        <div class="tasks_container container">
+            {% for task in tasks %}
+            <div class="task_card">
+                <h2 class="task_title">{{ task.Title }}</h2>
+                <p class="task_desc">{{ task.Description }}</p>
+                <p class="task_start">Start Date: {{ task.StartDate }}</p>
+                <p class="task_due">Due Date: {{ task.DueDate }}</p>
+                <p class="task_status">Status: {{ task.Status }}</p>
+                <p class="task_cat">Category: {{ task.Category }}</p>
+                <p class="prior">Priority:
+                    {% if task.Priority == 1 %}
+                    High
+                    {% elif task.Priority == 2 %}
+                    Medium
+                    {% elif task.Priority == 3 %}
+                    Low
+                    {% endif %}
+                </p>
+                <p class="sub_count">{{ task.completed_subtasks }} OF {{ task.total_subtasks }} subtasks completed</p>
+                <!-- Add link to task editing screen -->
+                <a class="task_edit" href="{{ url_for('task_screen', task_id=task.ID) }}">Edit</a>
+                <!-- Add link to task deleting functionality -->
+                <a class="task_delet" href="{{ url_for('delete_task', task_id=task.ID) }}"
+                    onclick="return confirm('Are you sure you want to delete this task?');">Delete</a>
+            </div>
+            {% endfor %}
+            <!-- Link to add a new task -->
+            <a class="task_card new_card" href="{{ url_for('task_screen', task_id=0) }}"><i>+</i></a>
+        </div>
+    </main>
+    <footer>
+        created by mohammed mahrous - all right reserved © <span id="yearSpan"></span>
+    </footer>
+
+
+
+    <script src="../static/js/main.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,135 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #2D2637;
+    margin: 0 auto;
+}
+
+header {
+    height: 70px;
+}
+
+.container {
+    padding: 0 185px;
+}
+
+nav {
+    width: 100%;
+    height: 70px;
+    margin: 0 auto;
+    padding: 10px 30px;
+    flex-shrink: 0;
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2D2637;
+}
+
+nav .logo {
+    color: #FFF;
+    text-align: center;
+    font-family: Outfit;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+}
+
+nav form {
+    padding: 4px 20px;
+    color: #fff;
+    font-size: 24px;
+}
+
+nav form select,
+nav form input[type="text"] {
+    height: 30px;
+    background-color: #2D2637;
+    border: none;
+    text-align: center;
+    color: #959595;
+    font-size: 18px;
+    outline: none;
+    border-bottom: 2px transparent solid;
+}
+
+nav form label:not(:first-of-type) {
+    margin-left: 15px;
+}
+
+nav form input[type="text"]:focus {
+    border-bottom-color: #959595;
+    caret-color: #959595;
+}
+
+nav form #apply_filter {
+    height: 30px;
+    width: 60px;
+    background-color: #16111C;
+    border: none;
+    border-radius: 10px;
+    color: #959595;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+nav form #apply_filter:active,
+nav form #apply_filter:focus,
+nav form #apply_filter:hover {
+    background-color: #959595;
+    color: #16111C;
+}
+
+.tasks_container {
+    display: grid;
+    justify-content: space-between;
+    gap: 15px;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.tasks_container .task_card {
+    padding: 20px 25px;
+    background-color: #18131F;
+    border-radius: 20px;
+    flex-grow: 1;
+}
+
+.tasks_container .task_card.new_card {
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 250px;
+    color: #2d2637;
+}
+
+footer {
+    width: 100%;
+    margin-top: 30px;
+    padding: 30px 0;
+    text-align: center;
+    background-color: #1E1E1E;
+    color: #FFF;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: lowercase;
+    text-transform: uppercase;
+}
+
+.task_card .task_title {
+    color: #FFF;
+    text-align: center;
+    font-family: Outfit;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: capitalize;
+}
