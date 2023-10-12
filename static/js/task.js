@@ -50,6 +50,22 @@ document.querySelectorAll('.delete_subtask').forEach(function (deleteButton) {
     deleteButton.addEventListener('click', function () {
         let confirm_delete = confirm('Are you sure you want to delete this subtask?');
         if (confirm_delete) {
+            // Get the subtask ID from a data attribute.
+            const subtaskId = deleteButton.getAttribute('data-subtask-id');
+
+            // Send a DELETE request to the server.
+            fetch(`/delete_subtask/${subtaskId}`, {
+                method: 'POST',
+            })
+                .then(response => {
+                    if (response.ok) {
+                        // If the request was successful, remove the subtask from the DOM.
+                        deleteButton.closest('.subtask').remove();
+                    } else {
+                        console.error('Failed to delete subtask', response);
+                    }
+                })
+                .catch(error => console.error('Error during fetch operation', error));
             deleteButton.parentElement.remove()
         }
     });

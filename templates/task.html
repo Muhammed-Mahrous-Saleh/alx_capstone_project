@@ -88,13 +88,13 @@
 
                     <input type="date" name="subtask_due_date_{{ loop.index }}" value="{{ subtask.DueDate }}">
 
-                    <button type="button" class="delete_subtask">Delete
+                    <button type="button" class="delete_subtask" data-subtask-id="{{ subtask.ID }}">Delete
                         Subtask</button><br><br>
                 </div>
                 {% endfor %}
             </div>
 
-            <button type="button" id="add_subtask">Add Subtask</button><br>
+            <button type="button" id="add_subtask">+</button><br>
             <input type="submit" value="Save Task"><br>
             <a href="{{ url_for('main_screen') }}">Abort Changes</a>
         </form>
