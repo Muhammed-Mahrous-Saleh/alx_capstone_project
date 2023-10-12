@@ -29,7 +29,9 @@ nav {
     background-color: #2D2637;
 }
 
-nav .logo {
+nav .logo,
+nav .logo a {
+    text-decoration: none;
     color: #FFF;
     text-align: center;
     font-family: Outfit;
@@ -159,4 +161,57 @@ footer {
     border-radius: 10px;
     font-size: 16px;
     text-transform: capitalize;
+}
+
+.task_page main>h1,
+.task_page main form>h2 {
+    text-align: center;
+    color: white;
+    margin-top: 10px;
+    text-transform: capitalize;
+}
+
+.task_page main>h1 {
+    font-size: 40px;
+}
+
+.task_page main form {
+    margin: 0 auto;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.task_page .input_container {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+}
+
+.task_page .input_container label {
+    color: #dfd9ff;
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: capitalize;
+}
+
+.task_page .input_container input,
+.task_page .input_container textarea,
+.task_page .input_container select {
+    height: 30px;
+    background-color: #463F4F;
+    border: none;
+    text-align: center;
+    color: #eaeaea;
+    font-size: 18px;
+    outline: none;
+    border-bottom: 2px transparent solid;
+}
+
+.task_page .input_container input:focus,
+.task_page .input_container textarea:focus {
+    border-bottom-color: #eaeaea;
+    caret-color: #eaeaea;
 }
