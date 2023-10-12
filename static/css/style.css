@@ -211,7 +211,28 @@ footer {
 }
 
 .task_page .input_container input:focus,
-.task_page .input_container textarea:focus {
+.task_page .input_container textarea:focus,
+.subtask input[type="text"]:focus {
     border-bottom-color: #eaeaea;
     caret-color: #eaeaea;
+}
+
+#subtasks .subtask {
+    display: grid;
+    grid-template-columns: repeat(4, 25%);
+    height: 50px;
+}
+
+.subtask * {
+    background-color: #463F4F;
+    border: none;
+    outline: none;
+    height: 100%;
+    color: #eaeaea;
+    transition: 0.5s;
+}
+
+.subtask .delete_subtask:hover {
+    color: rgb(185, 53, 53);
+    cursor: pointer;
 }

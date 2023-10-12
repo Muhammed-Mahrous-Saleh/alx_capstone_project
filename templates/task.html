@@ -73,10 +73,7 @@
                 {% for subtask in subtasks %}
                 <div class="subtask">
                     <input type="hidden" name="subtask_id_{{ loop.index }}" value="{{ subtask.ID }}">
-                    <label for="subtask_title_{{ loop.index }}">Title:</label>
-                    <input type="text" name="subtask_title_{{ loop.index }}" value="{{ subtask.Title }}" required><br>
-
-                    <label for="subtask_status_{{ loop.index }}">Status:</label>
+                    <input type="text" name="subtask_title_{{ loop.index }}" value="{{ subtask.Title }}" required>
                     <select name="subtask_status_{{ loop.index }}">
                         <option value="Not Started" {% if subtask.Status=='Not Started' %}selected{% endif %}>Not
                             Started
@@ -87,12 +84,12 @@
                         <option value="Completed" {% if subtask.Status=='Completed' %}selected{% endif %}>
                             Completed
                         </option>
-                    </select><br>
+                    </select>
 
-                    <label for="subtask_due_date_{{ loop.index }}">Due Date:</label>
-                    <input type="date" name="subtask_due_date_{{ loop.index }}" value="{{ subtask.DueDate }}"><br>
+                    <input type="date" name="subtask_due_date_{{ loop.index }}" value="{{ subtask.DueDate }}">
 
-                    <button type="button" class="delete_subtask">Delete Subtask</button><br><br>
+                    <button type="button" class="delete_subtask">Delete
+                        Subtask</button><br><br>
                 </div>
                 {% endfor %}
             </div>
