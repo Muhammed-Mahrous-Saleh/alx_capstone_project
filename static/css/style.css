@@ -27,6 +27,7 @@ nav {
     justify-content: space-between;
     align-items: center;
     background-color: #2D2637;
+    z-index: 100;
 }
 
 nav .logo,
@@ -236,4 +237,29 @@ footer {
 .subtask .delete_subtask:hover {
     color: rgb(185, 53, 53);
     cursor: pointer;
+}
+
+#add_subtask,
+#save_task {
+    background-color: #463F4F;
+    border: none;
+    cursor: pointer;
+    font-size: 40px;
+    color: #2D2637;
+    text-align: center;
+    padding: none;
+}
+
+#save_task {
+    border-radius: 15px;
+    transition: 0.3s;
+}
+
+#save_task:hover {
+    background-color: rgb(8, 69, 8);
+    color: rgb(161, 87, 164);
+}
+
+input[type="datetime-local"] {
+    z-index: 1;
 }

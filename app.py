@@ -185,5 +185,26 @@ def check_reminders():
     return jsonify([dict(r) for r in reminders])
 
 
+@app.route('/abort_changes/<int:task_id>', methods=['POST'])
+def abort_changes(task_id):
+
+    # Retrieve original subtasks.
+    original_subtasks = request.get_json().get('subtasks', [])
+    print("Received data:", original_subtasks)
+    with get_db_connection() as conn:
+        print("got in point 1")
+        # Delete current subtasks in SubTask.
+        conn.execute('DELETE FROM SubTask WHERE TaskID = ?', (task_id,))
+        print("got in point 2")
+        # Insert original subtasks back into SubTask.
+        for subtask in original_subtasks:
+            conn.execute('''
+                INSERT INTO SubTask (ID, Title, Status, DueDate, TaskID)
+                VALUES (?, ?, ?, ?, ?)
+            ''', (subtask['ID'], subtask['Title'], subtask['Status'], subtask['DueDate'], task_id))
+    print("got in point 3")
+    return redirect(url_for('task_screen', task_id=task_id))
+
+
 if __name__ == '__main__':
     app.run(debug=True)

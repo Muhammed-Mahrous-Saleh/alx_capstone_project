@@ -95,12 +95,12 @@
             </div>
 
             <button type="button" id="add_subtask">+</button><br>
-            <input type="submit" value="Save Task"><br>
-            <a href="{{ url_for('main_screen') }}">Abort Changes</a>
+            <input type="submit" value="Save Task" id="save_task"><br>
+            <button type="button" id="abort_changes" data-task-id='{{ task.ID }}'>Abort Changes</button>
         </form>
     </main>
     <footer>
-        created by mohammed mahrous - all right reserved © <span id="yearSpan"></span>
+        created by Muhammed-Mahrous-Saleh - all right reserved © <span id="yearSpan"></span>
     </footer>
     <script src="../static/js/task.js"></script>
 </body>
