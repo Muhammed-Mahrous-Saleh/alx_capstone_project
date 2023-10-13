@@ -61,8 +61,9 @@ def main_screen():
     # Add conditions for search and filter
     conditions = []
     if search_term != '':
-        conditions.append('Task.Title LIKE ?')
-        params.append('%' + search_term + '%')
+        conditions.append(
+            'Task.Title LIKE ? OR Task.Description LIKE ? OR Task.Category LIKE ?')
+        params.extend(['%' + search_term + '%'] * 3)
     if filter_option != 'all':
         conditions.append('Task.Status = ?')
         params.append(filter_option)

@@ -27,6 +27,7 @@
                 <label for="sort">Sort:</label>
                 <select id="sort" name="sort">
                     <option value="DueDate" {{ 'selected' if sort_option=='DueDate' }}>Due Date</option>
+                    <option value="StartDate" {{ 'selected' if sort_option=='StartDate' }}>Start Date</option>
                     <option value="Priority" {{ 'selected' if sort_option=='Priority' }}>Priority</option>
                     <option value="Title" {{ 'selected' if sort_option=='Title' }}>Title</option>
                 </select>
