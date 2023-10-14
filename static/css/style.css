@@ -6,11 +6,25 @@ body {
     font-family: Arial, sans-serif;
     background-color: #2D2637;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    max-width: 100%;
 }
 
 header {
     height: 70px;
 }
+
+main {
+    flex: 1 0 auto;
+}
+
+footer {
+    flex-shrink: 0;
+}
+
+
 
 .container {
     padding: 0 185px;
@@ -93,6 +107,7 @@ nav form #apply_filter:hover {
     justify-content: space-between;
     gap: 15px;
     grid-template-columns: repeat(3, 1fr);
+    min-height: 80%;
 }
 
 .tasks_container .task_card {
@@ -122,7 +137,6 @@ footer {
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    text-transform: lowercase;
     text-transform: uppercase;
 }
 
@@ -141,6 +155,7 @@ footer {
     text-align: center;
     font-size: 18px;
     color: #9385d7;
+    text-overflow: ellipsis;
 }
 
 .task_card p {
@@ -268,4 +283,111 @@ footer {
 
 input[type="datetime-local"] {
     z-index: 1;
+}
+
+@media (max-width:991px) {
+    .container {
+        padding: 0 120px;
+    }
+}
+
+@media (min-width:575px) AND (max-width:1199px) {
+    .tasks_container {
+        display: grid;
+        justify-content: space-between;
+        gap: 15px;
+        grid-template-columns: 1fr;
+        min-height: 80%;
+    }
+
+    nav {
+        height: fit-content;
+        flex-direction: column;
+        position: relative;
+    }
+
+    nav form select,
+    nav form input[type="text"] {
+        font-size: 15px;
+    }
+
+    nav form label {
+        display: none;
+    }
+
+    header {
+        margin-bottom: 5em;
+    }
+
+    footer {
+        font-size: 13px;
+    }
+
+    .task_page .input_container {
+        grid-template-columns: 150px 1fr;
+    }
+
+    .task_page .input_container input,
+    .task_page .input_container textarea,
+    .task_page .input_container select {
+        min-width: fit-content;
+    }
+
+    .task_page .input_container label {
+        color: #dfd9ff;
+        font-size: 22px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        text-transform: capitalize;
+    }
+
+    .task_page main form {
+        margin: 0 auto;
+        width: fit-content;
+    }
+
+    .task_page header {
+        margin-bottom: 3em;
+    }
+}
+
+@media (min-width:768px) AND (max-width:1199px) {
+    .tasks_container {
+        display: grid;
+        justify-content: space-between;
+        gap: 15px;
+        grid-template-columns: repeat(2, 1fr);
+        min-height: 80%;
+    }
+
+    header {
+        margin-bottom: 4em;
+    }
+
+    footer {
+        font-size: 17px;
+    }
+
+    .task_page main form {
+        width: 70%;
+    }
+
+    .task_page .input_container label {
+        font-size: 26px;
+    }
+}
+
+@media (max-width:1199px) {
+    nav form {
+        font-size: 26px;
+    }
+
+    nav form label {
+        display: inline;
+    }
+
+    .tasks_container {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
